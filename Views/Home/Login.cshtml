@@ -1,0 +1,42 @@
+﻿@model FashionFlare.Models.Login
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container mt-3 d-flex justify-content-center">
+    <div class="col-md-6 col-lg-5">
+        <div class="neumorphic-card p-5 rounded">
+            <h3 class="text-center mb-4" style="color: #3498db;">Login</h3>
+            <form asp-action="LoginPost">
+                @* <div asp-validation-summary="" class="text-danger mb-3"></div> *@
+                <div class="form-group">
+                    <label asp-for="Email" class="mb-2 font-weight-bold">Email</label>
+                    <input asp-for="Email" class="p-2 form-control neumorphic-input rounded-pill" placeholder="Enter your email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group mt-4">
+                    <label asp-for="Password" class="mb-2 font-weight-bold">Password</label>
+                    <input asp-for="Password" class="p-2 form-control neumorphic-input rounded-pill" type="password" placeholder="Enter your password" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group form-check mt-4">
+                    <input class="form-check-input" asp-for="RememberMe" id="rememberMeCheck" />
+                    <label class="form-check-label" for="rememberMeCheck">
+                        @Html.DisplayNameFor(model => model.RememberMe)
+                    </label>
+                </div>
+                <div class="form-group mt-5 text-center">
+                    <button type="submit" class="btn btn-lg neumorphic-button rounded-pill px-5">Log In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
