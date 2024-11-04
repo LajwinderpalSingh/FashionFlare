@@ -19,7 +19,10 @@ namespace FashionFlare.Models
 
         public string ImageUrl { get; set; }
 
+        public bool IsEnabled { get; set; }
+
         // Foreign key for Category
+        public int StockQuantity { get; set; }
         public int CategoryId { get; set; }
 
         // Navigation property for Category

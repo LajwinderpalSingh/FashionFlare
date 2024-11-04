@@ -9,13 +9,10 @@
     <div class="row mb-4">
         <div class="col">
             <h1 class="fw-bold">Product Management</h1>
-            <!-- Code for adding a new product -->
             <div class="mt-4">
-
                 <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#productModal">
                     <i class="fas fa-plus"></i> Add New Product
                 </button>
-                <!-- Button to add a new category -->
                 <button type="button" class="btn btn-primary btn-lg ms-3" data-bs-toggle="modal" data-bs-target="#categoryModal">
                     <i class="fas fa-folder-plus"></i> Add New Category
                 </button>
@@ -33,7 +30,9 @@
                             <th scope="col">#</th>
                             <th scope="col">Product Name</th>
                             <th scope="col">Price</th>
+                            <th scope="col">Stock Quantity</th>
                             <th scope="col">Actions</th>
+                            <th scope="col">Availability</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,7 +41,7 @@
                             <tr>
                                 <td>@product.ProductId</td>
                                 <td>
-                                    @if (ViewBag.EditId != product.ProductId)
+                                    @if (Convert.ToInt32(ViewData["EditId"]) != product.ProductId)
                                     {
                                         @product.Name
                                     }
@@ -53,7 +52,7 @@
                                     }
                                 </td>
                                 <td>
-                                    @if (ViewBag.EditId != product.ProductId)
+                                    @if (Convert.ToInt32(ViewData["EditId"]) != product.ProductId)
                                     {
                                         @product.Price
                                     }
@@ -63,7 +62,17 @@
                                     }
                                 </td>
                                 <td>
-                                    @if (ViewBag.EditId != product.ProductId)
+                                    @if (Convert.ToInt32(ViewData["EditId"]) != product.ProductId)
+                                    {
+                                        @product.StockQuantity
+                                    }
+                                    else
+                                    {
+                                        <input type="text" name="StockQuantity" value="@product.StockQuantity" class="form-control" />
+                                    }
+                                </td>
+                                <td>
+                                    @if (Convert.ToInt32(ViewData["EditId"]) != product.ProductId)
                                     {
                                         <button type="submit" name="EditAction" value="Edit-@product.ProductId" class="btn btn-warning btn-sm me-2">
                                             <i class="fas fa-edit"></i> Edit
@@ -81,6 +90,14 @@
                                             <i class="fas fa-times"></i> Cancel
                                         </button>
                                     }
+                                </td>
+                                <td>
+                                    <div>
+                                        <input type="radio" name="IsEnabled" value="true" @(product.IsEnabled ? "checked" : "") />
+                                        <label>Enabled</label>
+                                        <input type="radio" name="IsEnabled" value="false" @(!product.IsEnabled ? "checked" : "") />
+                                        <label>Disabled</label>
+                                    </div>
                                 </td>
                             </tr>
                         }
@@ -110,6 +127,11 @@
                         <label asp-for="Price" class="form-label"></label>
                         <input asp-for="Price" type="number" class="form-control" placeholder="Enter product price">
                         <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="StockQuantity" class="form-label"></label>
+                        <input asp-for="StockQuantity" type="number" class="form-control" placeholder="Enter product quantity">
+                        <span asp-validation-for="StockQuantity" class="text-danger"></span>
                     </div>
                     <div class="form-group mb-3">
                         <label asp-for="CategoryId" class="form-label"></label>

@@ -16,6 +16,9 @@ namespace FashionFlare.Models.UI
         [Required(ErrorMessage = "Image is Required")]
         public IFormFile ImageUrl { get; set; }
 
+        [Required(ErrorMessage = "Quantity is Required")]
+        public int StockQuantity { get; set; }
+
         public List<Models.Category> Categories { get; set; }
         public int CategoryId { get; set; }
 

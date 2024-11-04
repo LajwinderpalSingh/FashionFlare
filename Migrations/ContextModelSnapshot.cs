@@ -55,6 +55,9 @@ namespace FashionFlare.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsEnabled")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -62,6 +65,9 @@ namespace FashionFlare.Migrations
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("StockQuantity")
+                        .HasColumnType("int");
 
                     b.HasKey("ProductId");
 
@@ -172,15 +178,15 @@ namespace FashionFlare.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2af9a427-4b4f-40b0-898a-8f2303838820",
-                            ConcurrencyStamp = "e7af106a-ccff-46ad-9aab-0fe16f9594bf",
+                            Id = "2b9858fd-a537-41d2-ad56-0e9ca054cab2",
+                            ConcurrencyStamp = "f23de152-1b65-4753-9bcf-bb6bde6d5536",
                             Name = "Visitor",
                             NormalizedName = "VISITOR"
                         },
                         new
                         {
-                            Id = "c6dde5ff-d4a6-4195-996a-5391fdc56e82",
-                            ConcurrencyStamp = "c451f5f2-5df0-4d8e-bfd0-01f2adea328d",
+                            Id = "c85c4e11-2dde-4887-8be0-71be9c316dba",
+                            ConcurrencyStamp = "c1f488c0-2a54-47c3-848e-7272cea8f839",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
