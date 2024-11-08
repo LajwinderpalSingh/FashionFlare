@@ -4,7 +4,7 @@
 
 namespace FashionFlare.Migrations
 {
-    public partial class AddIsEnabledToProduct : Migration
+    public partial class Product : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,22 +18,15 @@ namespace FashionFlare.Migrations
                 keyColumn: "Id",
                 keyValue: "897a1cce-0754-46a3-813b-ceb0200b9cf9");
 
-            migrationBuilder.AddColumn<bool>(
-                name: "IsEnabled",
-                table: "Products",
-                type: "bit",
-                nullable: false,
-                defaultValue: false);
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[] { "09daa3ab-774f-4715-88e5-3bae4fd8a619", "fa9f9493-621c-49d1-99bd-3feef62f8207", "Administrator", "ADMINISTRATOR" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "2b9858fd-a537-41d2-ad56-0e9ca054cab2", "f23de152-1b65-4753-9bcf-bb6bde6d5536", "Visitor", "VISITOR" });
-
-            migrationBuilder.InsertData(
-                table: "AspNetRoles",
-                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "c85c4e11-2dde-4887-8be0-71be9c316dba", "c1f488c0-2a54-47c3-848e-7272cea8f839", "Administrator", "ADMINISTRATOR" });
+                values: new object[] { "e0833a0e-465c-44eb-aeee-aec9a8cc1037", "0f53dc22-182f-46be-9a42-9294f5d3de9d", "Visitor", "VISITOR" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -41,16 +34,12 @@ namespace FashionFlare.Migrations
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "2b9858fd-a537-41d2-ad56-0e9ca054cab2");
+                keyValue: "09daa3ab-774f-4715-88e5-3bae4fd8a619");
 
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "c85c4e11-2dde-4887-8be0-71be9c316dba");
-
-            migrationBuilder.DropColumn(
-                name: "IsEnabled",
-                table: "Products");
+                keyValue: "e0833a0e-465c-44eb-aeee-aec9a8cc1037");
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",

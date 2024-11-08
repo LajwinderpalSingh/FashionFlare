@@ -55,9 +55,6 @@ namespace FashionFlare.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsEnabled")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -178,15 +175,15 @@ namespace FashionFlare.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2b9858fd-a537-41d2-ad56-0e9ca054cab2",
-                            ConcurrencyStamp = "f23de152-1b65-4753-9bcf-bb6bde6d5536",
+                            Id = "e0833a0e-465c-44eb-aeee-aec9a8cc1037",
+                            ConcurrencyStamp = "0f53dc22-182f-46be-9a42-9294f5d3de9d",
                             Name = "Visitor",
                             NormalizedName = "VISITOR"
                         },
                         new
                         {
-                            Id = "c85c4e11-2dde-4887-8be0-71be9c316dba",
-                            ConcurrencyStamp = "c1f488c0-2a54-47c3-848e-7272cea8f839",
+                            Id = "09daa3ab-774f-4715-88e5-3bae4fd8a619",
+                            ConcurrencyStamp = "fa9f9493-621c-49d1-99bd-3feef62f8207",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });

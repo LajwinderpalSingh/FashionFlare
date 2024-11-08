@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <None Include="Views\Admin\Admin.cshtml" />
+    <None Include="Views\Products\Products.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
