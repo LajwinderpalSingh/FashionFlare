@@ -37,8 +37,7 @@
             @foreach (var product in Model)
             {
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                    @* <a asp-controller="Detail" asp-action="Index" asp-route-productId="@product.ProductId" style="text-decoration: none; color: inherit;"> *@
-                    <a>
+                    <a asp-controller="Detail" asp-action="Index" asp-route-productId="@product.ProductId" style="text-decoration: none; color: inherit;">
                         <div class="card h-100">
                             <div class="card-img-container">
                                 <img class="card-img-top" src="~/@product.ImageUrl" alt="Product image">

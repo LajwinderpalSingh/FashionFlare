@@ -1,2 +1,1 @@
 # FashionFlare
-#Lajwinder's pc

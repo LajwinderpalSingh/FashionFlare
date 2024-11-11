@@ -111,6 +111,16 @@ body {
     width: auto;
 }
 
+detailImage {
+    height: 350px; /* Set the desired fixed height */
+    /*width: 100%;*/
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+}
+
 .quantity {
     width: 30px;
 }
